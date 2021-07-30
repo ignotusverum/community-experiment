@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0AB6BB26B4B6DC00E35171 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AB6BA26B4B6DC00E35171 /* Tag.swift */; };
+		5A0AB6BD26B4B6E700E35171 /* TagsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AB6BC26B4B6E700E35171 /* TagsAdapter.swift */; };
+		5A0AB6BF26B4B75500E35171 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AB6BE26B4B75500E35171 /* Comment.swift */; };
+		5A0AB6C126B4B7BB00E35171 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AB6C026B4B7BB00E35171 /* User.swift */; };
+		5A0AB6C326B4B90A00E35171 /* CommentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AB6C226B4B90A00E35171 /* CommentAdapter.swift */; };
 		5A53864826B324F600322CD7 /* CommunityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53864726B324F600322CD7 /* CommunityApp.swift */; };
 		5A53864A26B324F600322CD7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53864926B324F600322CD7 /* RootView.swift */; };
 		5A53864F26B324F700322CD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A53864E26B324F700322CD7 /* Preview Assets.xcassets */; };
@@ -38,6 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A0AB6BA26B4B6DC00E35171 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		5A0AB6BC26B4B6E700E35171 /* TagsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsAdapter.swift; sourceTree = "<group>"; };
+		5A0AB6BE26B4B75500E35171 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5A0AB6C026B4B7BB00E35171 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A0AB6C226B4B90A00E35171 /* CommentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAdapter.swift; sourceTree = "<group>"; };
 		5A53864426B324F600322CD7 /* Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Community.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A53864726B324F600322CD7 /* CommunityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityApp.swift; sourceTree = "<group>"; };
 		5A53864926B324F600322CD7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -288,6 +298,8 @@
 				5A7539B926B3857B0016DD60 /* Models */,
 				5A7539BB26B3857B0016DD60 /* Extensions */,
 				5A7539BD26B3857B0016DD60 /* ArticlesAdapter.swift */,
+				5A0AB6BC26B4B6E700E35171 /* TagsAdapter.swift */,
+				5A0AB6C226B4B90A00E35171 /* CommentAdapter.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -295,6 +307,9 @@
 		5A7539B926B3857B0016DD60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A0AB6BA26B4B6DC00E35171 /* Tag.swift */,
+				5A0AB6C026B4B7BB00E35171 /* User.swift */,
+				5A0AB6BE26B4B75500E35171 /* Comment.swift */,
 				5A7539BA26B3857B0016DD60 /* Article.swift */,
 			);
 			path = Models;
@@ -392,12 +407,15 @@
 				5A7539C426B3857B0016DD60 /* Networking.swift in Sources */,
 				5A7539A326B37E9F0016DD60 /* FeedListAction.swift in Sources */,
 				5A7539C526B3857B0016DD60 /* Article.swift in Sources */,
+				5A0AB6BD26B4B6E700E35171 /* TagsAdapter.swift in Sources */,
 				5A75399126B325CF0016DD60 /* Store.swift in Sources */,
 				5A7539C926B3857B0016DD60 /* ImageLoader.swift in Sources */,
 				5A7539C726B3857B0016DD60 /* ArticlesAdapter.swift in Sources */,
+				5A0AB6C126B4B7BB00E35171 /* User.swift in Sources */,
 				5A75398F26B325CF0016DD60 /* AppAction.swift in Sources */,
 				5A75398C26B325CF0016DD60 /* StoreProvider.swift in Sources */,
 				5A75398D26B325CF0016DD60 /* AppReducer.swift in Sources */,
+				5A0AB6BF26B4B75500E35171 /* Comment.swift in Sources */,
 				5A75398A26B325CF0016DD60 /* MiddlewareFactory.swift in Sources */,
 				5A75398E26B325CF0016DD60 /* AppState.swift in Sources */,
 				5A75399026B325CF0016DD60 /* Connector.swift in Sources */,
@@ -407,10 +425,12 @@
 				5A53864A26B324F600322CD7 /* RootView.swift in Sources */,
 				5A75398726B325CF0016DD60 /* JSONDecoder.swift in Sources */,
 				5A7539AB26B37EEF0016DD60 /* ArticleCard.swift in Sources */,
+				5A0AB6C326B4B90A00E35171 /* CommentAdapter.swift in Sources */,
 				5A7539A026B37E9F0016DD60 /* FeedListVIew.swift in Sources */,
 				5A53864826B324F600322CD7 /* CommunityApp.swift in Sources */,
 				5A75398B26B325CF0016DD60 /* FeedMiddleware.swift in Sources */,
 				5A7539C626B3857B0016DD60 /* Parser.swift in Sources */,
+				5A0AB6BB26B4B6DC00E35171 /* Tag.swift in Sources */,
 				5A7539A226B37E9F0016DD60 /* FeedListState.swift in Sources */,
 				5A7539C326B3857B0016DD60 /* APIError.swift in Sources */,
 				5A7539CB26B3857B0016DD60 /* AsyncImage.swift in Sources */,

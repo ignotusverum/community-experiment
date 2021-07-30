@@ -48,15 +48,23 @@ class Networking {
             }
         }
         
-        print("debug - \(request.url)")
+        request.httpMethod = config.type.rawValue
         
         return request
     }
 }
 
+enum RequestType: String {
+    case get = "GET"
+    case post = "POST" 
+    case put = "PUT"
+    case delete = "DELETE"
+}
+
 struct RequestConfig {
     var path: String
     var queryItems: [URLQueryItem]?
-    var params: [String: String]?
+    var params: [String: Any]?
     var base: String = "localhost"
+    var type: RequestType = .get
 }
