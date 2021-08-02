@@ -12,7 +12,9 @@ struct FeedListView: View {
     let reloadAndFilterByFavorite: Command
     let onLinkTapped: CommandWith<URL>
     let articles: [Article]
-
+    
+    @State private var isActicleCreationPresented = false
+    
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
@@ -20,43 +22,38 @@ struct FeedListView: View {
                     Color
                         .clear
                         .padding(.top, 10)
-
-                    LazyVStack(spacing: 10) {
+                    
+                    LazyVStack() {
                         ForEach(articles,
                                 id: \.self) { row in
                             ArticleCard(article: row)
-//                                .onTapGesture {
-//                                    onLinkTapped(row.link)
-//                                }
-                                .frame(height: geo.size.width)
+                                .onTapGesture {
+                                    print("comment tapped")
+                                }
+                                .frame(width: geo.size.width)
                         }
                     }
-                    .padding(.horizontal)
-                    .animation(.default)
-
+                    
                     Color
                         .clear
                         .padding(.bottom,
                                  60)
                 }
-
+                
                 HStack {
                     Spacer()
-
+                    
                     Button(action: {
-                        withAnimation {
-                            reloadAndFilterByFavorite()
-                        }
-
+                        isActicleCreationPresented.toggle()
                     }) {
-                        Image(systemName: "heart.fill")
-                            .foregroundColor(.red)
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(.white)
                     }
                     .frame(width: 50,
                            height: 50)
                     .background(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.white)
+                            .fill(Color.blue)
                             .shadow(color: Color.surfaceColor.opacity(0.4),
                                     radius: 1,
                                     x: 0,
@@ -65,7 +62,55 @@ struct FeedListView: View {
                 }
                 .padding(25)
             }
+            .popup(isPresented: isActicleCreationPresented, 
+                   alignment: .center, 
+                   content: { 
+                ZStack {
+                    Color
+                        .black
+                        .opacity(0.35)
+                        .blur(radius: 20)
+                        .onTapGesture {
+                            isActicleCreationPresented.toggle()
+                        }
+                    
+                    CreatePostFlow()
+                        .frame(width: geo.size.width,
+                               height: geo.size.width / 2, 
+                               alignment: .center)
+                        .cornerRadius(25)
+                        .animation(.easeInOut)
+                    
+                    VStack {
+                        Spacer()
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Button(action: {
+                                print("send")
+                            }) {
+                                Image(systemName: "paperplane.fill")
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: 50,
+                                   height: 50)
+                            .background(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .fill(Color.red)
+                                    .shadow(color: Color.surfaceColor.opacity(0.4),
+                                            radius: 1,
+                                            x: 0,
+                                            y: 1)
+                            )
+                        }
+                        .padding(25)
+                    }
+                }
+            },
+                   onDismiss: { isActicleCreationPresented.toggle() })
         }
+        
         .background(Color.backgroundColor)
         .padding(.top, 1)
         .onAppear(perform: {
@@ -76,7 +121,7 @@ struct FeedListView: View {
 
 struct FeedListViewConnector: Connector {
     @EnvironmentObject var store: AppStore
-
+    
     func map() -> some View {
         var articles: [Article] = []
         switch store.state.feedFlowState {
@@ -84,7 +129,7 @@ struct FeedListViewConnector: Connector {
             articles = fetchedArticles
         default: break
         }
-
+        
         return FeedListView(reloadAndFilterByFavorite: store.bind { .feedListFlow(action: .reload) },
                             onLinkTapped: store.bind({ .feedListFlow(action: FeedListAction.openLink(url: $0)) }),
                             articles: articles)

@@ -24,6 +24,12 @@ struct CommunityApp: App {
                     .edgesIgnoringSafeArea(.all)
 
                 RootView(store: store)
+            }.task {
+                do {
+                    GlobalConfig.shared.user = try await UserAdapter.fetch()
+                } catch {
+                    print("Error occured")
+                }
             }
         }
     }

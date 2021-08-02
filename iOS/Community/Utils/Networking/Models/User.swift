@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Hashable {
     let name: String
-    let userName: String
+    let username: String
     let profileImage: String
-    let profileImage90: String
+    
+    var imagePath: URL? {
+        URL(string: "http://localhost:3000\(profileImage)")
+    }
 }

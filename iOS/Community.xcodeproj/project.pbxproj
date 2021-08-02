@@ -43,6 +43,9 @@
 		5AFCB2EA26B635A600F54ACE /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2E926B635A600F54ACE /* CreatePostView.swift */; };
 		5AFCB2EC26B635AF00F54ACE /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2EB26B635AF00F54ACE /* PostDetailView.swift */; };
 		5AFCB2EE26B635B300F54ACE /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2ED26B635B300F54ACE /* AccountView.swift */; };
+		5AFCB2F026B76F7400F54ACE /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2EF26B76F7400F54ACE /* Popup.swift */; };
+		5AFCB2F226B77B0400F54ACE /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F126B77B0400F54ACE /* UserAdapter.swift */; };
+		5AFCB2F426B77B2600F54ACE /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F326B77B2600F54ACE /* GlobalConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		5AFCB2E926B635A600F54ACE /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		5AFCB2EB26B635AF00F54ACE /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		5AFCB2ED26B635B300F54ACE /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		5AFCB2EF26B76F7400F54ACE /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		5AFCB2F126B77B0400F54ACE /* UserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
+		5AFCB2F326B77B2600F54ACE /* GlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 				5A75397326B325CE0016DD60 /* Extensions */,
 				5A75397526B325CE0016DD60 /* Colors */,
 				5A75397926B325CE0016DD60 /* Redux */,
+				5AFCB2F326B77B2600F54ACE /* GlobalConfig.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 		5A7539A426B37EEF0016DD60 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5AFCB2EF26B76F7400F54ACE /* Popup.swift */,
 				5A7539A526B37EEF0016DD60 /* ArticleCard.swift */,
 			);
 			path = UI;
@@ -309,6 +317,7 @@
 				5A7539BD26B3857B0016DD60 /* ArticlesAdapter.swift */,
 				5A0AB6BC26B4B6E700E35171 /* TagsAdapter.swift */,
 				5A0AB6C226B4B90A00E35171 /* CommentAdapter.swift */,
+				5AFCB2F126B77B0400F54ACE /* UserAdapter.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -419,6 +428,7 @@
 				5A7539C526B3857B0016DD60 /* Article.swift in Sources */,
 				5AFCB2EA26B635A600F54ACE /* CreatePostView.swift in Sources */,
 				5A0AB6BD26B4B6E700E35171 /* TagsAdapter.swift in Sources */,
+				5AFCB2F026B76F7400F54ACE /* Popup.swift in Sources */,
 				5A75399126B325CF0016DD60 /* Store.swift in Sources */,
 				5A7539C926B3857B0016DD60 /* ImageLoader.swift in Sources */,
 				5A7539C726B3857B0016DD60 /* ArticlesAdapter.swift in Sources */,
@@ -438,7 +448,9 @@
 				5A75398726B325CF0016DD60 /* JSONDecoder.swift in Sources */,
 				5A7539AB26B37EEF0016DD60 /* ArticleCard.swift in Sources */,
 				5A0AB6C326B4B90A00E35171 /* CommentAdapter.swift in Sources */,
+				5AFCB2F426B77B2600F54ACE /* GlobalConfig.swift in Sources */,
 				5A7539A026B37E9F0016DD60 /* FeedListVIew.swift in Sources */,
+				5AFCB2F226B77B0400F54ACE /* UserAdapter.swift in Sources */,
 				5A53864826B324F600322CD7 /* CommunityApp.swift in Sources */,
 				5A75398B26B325CF0016DD60 /* FeedMiddleware.swift in Sources */,
 				5A7539C626B3857B0016DD60 /* Parser.swift in Sources */,

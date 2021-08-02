@@ -15,6 +15,8 @@ struct Article: Decodable {
     let description: String
     let commentsCount: Int
     let positiveReactionsCount: Int
+    
+    let user: User
 }
 
 extension Article: Hashable { }

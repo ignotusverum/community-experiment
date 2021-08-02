@@ -13,7 +13,7 @@ struct AccountView: View {
     var body: some View { 
         NavigationView {
             Text(user.name)
-            Text(user.userName)
+            Text(user.username)
         }
         .navigationTitle("Account")
     }
