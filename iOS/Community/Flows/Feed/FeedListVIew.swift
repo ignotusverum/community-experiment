@@ -14,31 +14,27 @@ struct FeedListView: View {
     
     @State private var isActicleCreationPresented = false
     
-    
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
-                ScrollView {
-                    Color
-                        .clear
-                        .padding(.top, 10)
-                    
-                    LazyVStack() {
-                        ForEach(articles,
-                                id: \.self) { row in
-                            ArticleCard(article: row)
-                                .onTapGesture {
-                                    print("comment tapped")
-                                }
-                                .frame(width: geo.size.width)
-                        }
+                Color
+                    .clear
+                    .padding(.top, 10)
+                
+                List { 
+                    ForEach(articles,
+                            id: \.self) { row in
+                        ArticleCard(article: row)
+                            .onTapGesture {
+                                print("comment tapped")
+                            }
+                            .listRowSeparator(.hidden)
                     }
-                    
-                    Color
-                        .clear
-                        .padding(.bottom,
-                                 60)
                 }
+                .refreshable {
+                    reloadAndFilterByFavorite()
+                }
+                .listStyle(.sidebar)
                 
                 HStack {
                     Spacer()
@@ -89,7 +85,7 @@ struct FeedListView: View {
                    onDismiss: { isActicleCreationPresented.toggle() })
         }
         
-        .background(Color.gray.opacity(0.4))
+        .background(Color.backgroundColor)
         .padding(.top, 1)
         .onAppear(perform: {
             reloadAndFilterByFavorite()
