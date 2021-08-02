@@ -10,6 +10,6 @@ import Foundation
 struct Tag: Codable {
     let id: Int
     let name: String
-    let bgColorHex: String
-    let textColorHex: String
+    let bgColorHex: String?
+    let textColorHex: String?
 }

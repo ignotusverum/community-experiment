@@ -9,4 +9,5 @@ import Foundation
 
 enum AppAction {
     case feedListFlow(action: FeedListAction)
+    case createPostFlow(action: CreatePostAction)
 }

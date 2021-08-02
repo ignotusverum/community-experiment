@@ -27,6 +27,7 @@ struct CommunityApp: App {
             }.task {
                 do {
                     GlobalConfig.shared.user = try await UserAdapter.fetch()
+                    GlobalConfig.shared.tags = try await TagsAdapter.fetch()
                 } catch {
                     print("Error occured")
                 }

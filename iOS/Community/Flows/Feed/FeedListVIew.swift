@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct FeedListView: View {
+    let onCreateTapped: Command
     let reloadAndFilterByFavorite: Command
     let onLinkTapped: CommandWith<URL>
     let articles: [Article]
@@ -75,37 +76,10 @@ struct FeedListView: View {
                         }
                     
                     CreatePostFlow()
-                        .frame(width: geo.size.width,
-                               height: geo.size.width / 2, 
+                        .frame(width: geo.size.width, 
                                alignment: .center)
                         .cornerRadius(25)
                         .animation(.easeInOut)
-                    
-                    VStack {
-                        Spacer()
-                        
-                        HStack {
-                            Spacer()
-                            
-                            Button(action: {
-                                print("send")
-                            }) {
-                                Image(systemName: "paperplane.fill")
-                                    .foregroundColor(.white)
-                            }
-                            .frame(width: 50,
-                                   height: 50)
-                            .background(
-                                RoundedRectangle(cornerRadius: 25)
-                                    .fill(Color.red)
-                                    .shadow(color: Color.surfaceColor.opacity(0.4),
-                                            radius: 1,
-                                            x: 0,
-                                            y: 1)
-                            )
-                        }
-                        .padding(25)
-                    }
                 }
             },
                    onDismiss: { isActicleCreationPresented.toggle() })
@@ -130,7 +104,8 @@ struct FeedListViewConnector: Connector {
         default: break
         }
         
-        return FeedListView(reloadAndFilterByFavorite: store.bind { .feedListFlow(action: .reload) },
+        return FeedListView(onCreateTapped: store.bind { .createPostFlow(action: .onPostCreate) }, 
+                            reloadAndFilterByFavorite: store.bind { .feedListFlow(action: .reload) },
                             onLinkTapped: store.bind({ .feedListFlow(action: FeedListAction.openLink(url: $0)) }),
                             articles: articles)
     }

@@ -22,7 +22,6 @@ class ArticlesAdapter {
             .shared
             .request(with: .init(path: "articles", 
                                  params: ["article": ["title": title,
-                                                      "published": true,
                                                       "body_markdown": body,
                                                       "tags": tags]], 
                                  type: .post))

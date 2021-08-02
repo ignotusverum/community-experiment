@@ -17,6 +17,7 @@ struct Article: Decodable {
     let positiveReactionsCount: Int
     
     let user: User
+    let tagList: [String]
 }
 
 extension Article: Hashable { }

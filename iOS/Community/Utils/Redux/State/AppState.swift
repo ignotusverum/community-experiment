@@ -10,6 +10,8 @@ import Combine
 
 struct AppState {
     var feedFlowState = FeedListState()
+    var createFlowState = CreatePostState()
+    
     init() {}
 }
 

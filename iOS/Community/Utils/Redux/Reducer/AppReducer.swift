@@ -14,6 +14,9 @@ class AppReducer {
         case let .feedListFlow(action):
             feedListReducer(state: &state.feedFlowState,
                             action: action)
+        case let .createPostFlow(action):
+            createPostReducer(state: &state.createFlowState, 
+                              action: action)
         }
     }
 }

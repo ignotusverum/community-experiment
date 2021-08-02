@@ -11,4 +11,5 @@ class GlobalConfig {
     static let shared = GlobalConfig()
     
     var user: User!
+    var tags: [Tag]!
 }

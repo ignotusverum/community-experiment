@@ -16,7 +16,8 @@ class MiddlewareFactory {
     static var cancellables = Set<AnyCancellable>()
     static var allMiddlewares: [Middleware<AppState, AppAction>] {
         return [
-            FeedMiddleware.handler()
+            FeedMiddleware.handler(),
+            CreatePostMiddleware.handler()
         ]
     }
 }

@@ -18,6 +18,7 @@ class FeedMiddleware: MiddlewareProcessing {
                     fetchFeed(dispatch: dispatch)
                 default: break
                 }
+            default: break
             }
         }
     }

@@ -46,6 +46,10 @@
 		5AFCB2F026B76F7400F54ACE /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2EF26B76F7400F54ACE /* Popup.swift */; };
 		5AFCB2F226B77B0400F54ACE /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F126B77B0400F54ACE /* UserAdapter.swift */; };
 		5AFCB2F426B77B2600F54ACE /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F326B77B2600F54ACE /* GlobalConfig.swift */; };
+		5AFCB2F826B784C900F54ACE /* CreatePostAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F726B784C900F54ACE /* CreatePostAction.swift */; };
+		5AFCB2FA26B7850200F54ACE /* CreatePostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2F926B7850200F54ACE /* CreatePostState.swift */; };
+		5AFCB2FC26B7854000F54ACE /* CreatePostMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2FB26B7854000F54ACE /* CreatePostMiddleware.swift */; };
+		5AFCB2FE26B7896400F54ACE /* CreatePostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCB2FD26B7896400F54ACE /* CreatePostReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +95,10 @@
 		5AFCB2EF26B76F7400F54ACE /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		5AFCB2F126B77B0400F54ACE /* UserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		5AFCB2F326B77B2600F54ACE /* GlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
+		5AFCB2F726B784C900F54ACE /* CreatePostAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostAction.swift; sourceTree = "<group>"; };
+		5AFCB2F926B7850200F54ACE /* CreatePostState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostState.swift; sourceTree = "<group>"; };
+		5AFCB2FB26B7854000F54ACE /* CreatePostMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostMiddleware.swift; sourceTree = "<group>"; };
+		5AFCB2FD26B7896400F54ACE /* CreatePostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +218,7 @@
 			children = (
 				5A75397B26B325CE0016DD60 /* MiddlewareFactory.swift */,
 				5A75397C26B325CE0016DD60 /* FeedMiddleware.swift */,
+				5AFCB2FB26B7854000F54ACE /* CreatePostMiddleware.swift */,
 			);
 			path = Middleware;
 			sourceTree = "<group>";
@@ -268,6 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				5AFCB2E926B635A600F54ACE /* CreatePostView.swift */,
+				5AFCB2F726B784C900F54ACE /* CreatePostAction.swift */,
+				5AFCB2F926B7850200F54ACE /* CreatePostState.swift */,
+				5AFCB2FD26B7896400F54ACE /* CreatePostReducer.swift */,
 			);
 			path = CreatePost;
 			sourceTree = "<group>";
@@ -430,6 +442,7 @@
 				5A0AB6BD26B4B6E700E35171 /* TagsAdapter.swift in Sources */,
 				5AFCB2F026B76F7400F54ACE /* Popup.swift in Sources */,
 				5A75399126B325CF0016DD60 /* Store.swift in Sources */,
+				5AFCB2FE26B7896400F54ACE /* CreatePostReducer.swift in Sources */,
 				5A7539C926B3857B0016DD60 /* ImageLoader.swift in Sources */,
 				5A7539C726B3857B0016DD60 /* ArticlesAdapter.swift in Sources */,
 				5A0AB6C126B4B7BB00E35171 /* User.swift in Sources */,
@@ -437,11 +450,14 @@
 				5A75398C26B325CF0016DD60 /* StoreProvider.swift in Sources */,
 				5A75398D26B325CF0016DD60 /* AppReducer.swift in Sources */,
 				5A0AB6BF26B4B75500E35171 /* Comment.swift in Sources */,
+				5AFCB2FA26B7850200F54ACE /* CreatePostState.swift in Sources */,
 				5A75398A26B325CF0016DD60 /* MiddlewareFactory.swift in Sources */,
 				5A75398E26B325CF0016DD60 /* AppState.swift in Sources */,
 				5A75399026B325CF0016DD60 /* Connector.swift in Sources */,
 				5A7539C826B3857B0016DD60 /* ImageCache.swift in Sources */,
+				5AFCB2FC26B7854000F54ACE /* CreatePostMiddleware.swift in Sources */,
 				5A7539CA26B3857B0016DD60 /* EnvironmentValues+ImageCache.swift in Sources */,
+				5AFCB2F826B784C900F54ACE /* CreatePostAction.swift in Sources */,
 				5AFCB2EE26B635B300F54ACE /* AccountView.swift in Sources */,
 				5A75398826B325CF0016DD60 /* Colors.swift in Sources */,
 				5A53864A26B324F600322CD7 /* RootView.swift in Sources */,
