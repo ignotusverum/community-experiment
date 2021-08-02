@@ -23,6 +23,7 @@ class ArticlesAdapter {
             .request(with: .init(path: "articles", 
                                  params: ["article": ["title": title,
                                                       "body_markdown": body,
+                                                      "published": true,
                                                       "tags": tags]], 
                                  type: .post))
             .map(to: Article.self)

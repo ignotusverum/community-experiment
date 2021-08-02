@@ -123,9 +123,13 @@ struct CreatePostView: View {
 
 
 struct CreatePostFlow: Connector {
+    let onSubmitTapped: Command
     @EnvironmentObject var store: AppStore
     
     func map() -> some View {
-        CreatePostView(submitPost: store.bind { .createPostFlow(action: .createPost(title: $0.0, details: $0.1, tags: [$0.2])) })
+        CreatePostView(submitPost: store.bind { 
+            onSubmitTapped()
+            return .createPostFlow(action: .createPost(title: $0.0, details: $0.1, tags: [$0.2])) 
+        })
     }
 }

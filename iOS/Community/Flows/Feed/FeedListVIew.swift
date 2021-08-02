@@ -9,12 +9,11 @@ import SwiftUI
 import Combine
 
 struct FeedListView: View {
-    let onCreateTapped: Command
     let reloadAndFilterByFavorite: Command
-    let onLinkTapped: CommandWith<URL>
     let articles: [Article]
     
     @State private var isActicleCreationPresented = false
+    
     
     var body: some View {
         GeometryReader { geo in
@@ -75,7 +74,12 @@ struct FeedListView: View {
                             isActicleCreationPresented.toggle()
                         }
                     
-                    CreatePostFlow()
+                    CreatePostFlow(onSubmitTapped: { 
+                        isActicleCreationPresented.toggle()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
+                            reloadAndFilterByFavorite()
+                        }
+                    })
                         .frame(width: geo.size.width, 
                                alignment: .center)
                         .cornerRadius(25)
@@ -85,7 +89,7 @@ struct FeedListView: View {
                    onDismiss: { isActicleCreationPresented.toggle() })
         }
         
-        .background(Color.backgroundColor)
+        .background(Color.gray.opacity(0.4))
         .padding(.top, 1)
         .onAppear(perform: {
             reloadAndFilterByFavorite()
@@ -104,9 +108,7 @@ struct FeedListViewConnector: Connector {
         default: break
         }
         
-        return FeedListView(onCreateTapped: store.bind { .createPostFlow(action: .onPostCreate) }, 
-                            reloadAndFilterByFavorite: store.bind { .feedListFlow(action: .reload) },
-                            onLinkTapped: store.bind({ .feedListFlow(action: FeedListAction.openLink(url: $0)) }),
+        return FeedListView(reloadAndFilterByFavorite: store.bind { .feedListFlow(action: .reload) },
                             articles: articles)
     }
 }

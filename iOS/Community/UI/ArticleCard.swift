@@ -16,7 +16,7 @@ struct ArticleCard: View {
             HStack {
                 VStack(alignment: .leading,
                        spacing: 10) {
-                    Text("article.title")
+                    Text(article.title)
                         .font(Font.headline.weight(.bold))
                     
                     Text(article.description)
