@@ -1,0 +1,32 @@
+query getFeed($limit: Int!) {
+   getFeed(limit: $limit) {
+    nodes {
+      id
+      title
+      reactionsCount
+      repliesCount
+      owner {
+        member {
+          id
+          name
+          username
+          profilePicture {
+                ... on Image {
+      id
+                  name
+                  url
+    }
+          }
+        }
+      }
+      postType {
+        name
+      }
+      shortContent
+      seoDetail {
+              title
+        description
+      }
+        }
+   }
+}

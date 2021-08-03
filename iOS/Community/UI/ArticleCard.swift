@@ -46,7 +46,7 @@ struct ArticleCard: View {
                 HStack {
                     AsyncImage(
                         url: article.user.imagePath,
-                        placeholder: { Text("Loading ...") },
+                        placeholder: { RoundedRectangle(cornerRadius: 25).background(Color.green) },
                         image: { Image(uiImage: $0).resizable() }
                     )
                         .cornerRadius(15)

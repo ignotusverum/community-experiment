@@ -25,8 +25,14 @@ class FeedMiddleware: MiddlewareProcessing {
 
     private class func fetchFeed(dispatch: @escaping Dispatcher<AppAction>) {
         Task.init { 
-            let articles = try await ArticlesAdapter.fetchLatest()
-            dispatch(.feedListFlow(action: .fetched(articles)))
+            switch GlobalConfig.shared.environment {
+            case .tribe:
+                let articles = try await ArticlesGraphQLAdapter.fetchLatest()
+                dispatch(.feedListFlow(action: .fetched(articles)))
+            case .forem:
+                let articles = try await ArticlesAdapter.fetchLatest()
+                dispatch(.feedListFlow(action: .fetched(articles)))
+            }
         }
     }
 }

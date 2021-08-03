@@ -12,7 +12,15 @@ struct User: Codable, Hashable {
     let username: String
     let profileImage: String
     
-    var imagePath: URL? {
-        URL(string: "http://localhost:3000\(profileImage)")
+    let imagePath: URL?
+    
+    init(name: String,
+         username: String,
+         profileImage: String,
+         imagePath: URL? = nil) {
+        self.name = name
+        self.username = username
+        self.profileImage = profileImage
+        self.imagePath = imagePath ?? URL(string: "http://localhost:3000\(profileImage)")
     }
 }

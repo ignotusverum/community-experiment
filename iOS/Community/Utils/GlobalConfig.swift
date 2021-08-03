@@ -10,6 +10,13 @@ import Foundation
 class GlobalConfig {
     static let shared = GlobalConfig()
     
+    var environment: EnvironmentType = .forem
+    
     var user: User!
     var tags: [Tag]!
+}
+
+enum EnvironmentType: String {
+    case forem
+    case tribe
 }

@@ -18,6 +18,22 @@ struct Article: Decodable {
     
     let user: User
     let tagList: [String]
+    
+    init(id: Int,
+         title: String,
+         description: String,
+         commentsCount: Int,
+         positiveReactionsCount: Int,
+         user: User,
+         tagList: [String]) {
+        self.id = id 
+        self.title = title 
+        self.description = description 
+        self.commentsCount = commentsCount 
+        self.positiveReactionsCount = positiveReactionsCount 
+        self.user = user 
+        self.tagList = tagList 
+    }
 }
 
 extension Article: Hashable { }
